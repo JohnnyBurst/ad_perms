@@ -1,0 +1,5 @@
+#Copy permissions in AD from one user to another
+
+Get-ADUser -Identity aduser1 -Properties memberof | Select-Object -ExpandProperty memberof
+
+Get-ADUser -Identity aduser1 -Properties memberof | Select-Object -ExpandProperty memberof |  Add-ADGroupMember -Members aduser2
